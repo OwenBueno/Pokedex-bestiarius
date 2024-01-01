@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CardMedia from '@mui/material/CardMedia';
 
-import ClickHerePokemon from "./ClickHerePokemon";
+import ClickHerePokemon from "./button/ClickHerePokemon";
 
 function HomeBody() {
   return (

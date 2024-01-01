@@ -5,11 +5,11 @@ import Footer from '../components/common/Footer';
 function PokemonCRUD() {
 
   return (
-    <div>
+    <>
       <Header />
       <PokemonBody />
       <Footer />
-    </div>
+    </>
   );
 }
 
