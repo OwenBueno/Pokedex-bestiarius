@@ -86,10 +86,10 @@ function PokedexLimitBody() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(178px, 1fr))',
           gap: '16px',
           width: '100%',
-          maxHeight: '75vh',
+          maxHeight: {xs: '66vh', sm: "77vh", md: "56vh", lg: "65vh", xl: '75vh'},
           overflowY: 'auto',
           justifyItems: 'center',
-          position: 'relative', // Added position relative for loading overlay
+          position: 'relative',
         }}
       >
         {loading && (

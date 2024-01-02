@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, ListItem, CircularProgress } from '@mui/material';
+import { Box, ListItem, CircularProgress, Typography } from '@mui/material';
 
 import PokemonCard from './body/PokemonCard';
 import PokemonForm from './body/PokemonForm';
@@ -132,7 +132,9 @@ function PokemonBody() {
   };
   return (
     <>
-      <h1 style={{ textAlign: 'center' }}>Pokemon CRUD</h1>
+      <Typography sx={{ textAlign: 'center', fontWeight: 'bold', fontSize: '24px', margin:{xs: "0", md: "1rem 0 1rem 0"} }}>
+        Pokemon CRUD
+      </Typography>
       <PokemonForm
         newPokemon={newPokemon}
         nameError={nameError}
@@ -152,10 +154,16 @@ function PokemonBody() {
           sx={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(178px, 1fr))',
-            gap: '16px',
+            gap: '15px',
             width: '100%',
-            maxHeight: '65vh',
             overflowY: 'auto',
+            height: {
+              xs: '65vh',
+              sm: '70vh',
+              md: '75vh',
+              lg: '53vh',
+              xl: '65vh',
+            },
           }}
         >
           {pokemons.map((pokemon) => (

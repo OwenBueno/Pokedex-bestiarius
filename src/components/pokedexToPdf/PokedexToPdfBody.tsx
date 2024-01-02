@@ -95,20 +95,20 @@ function PokedexToPdf() {
   return (
     <>
         <PokemonForm
-        query={query}
-        nameError={nameError}
-        totalPages={totalPages}
-        currentPage={currentPage}
-        handleTextChange={handleTextChange}
-        handlePageChange={handlePageChange}
-      />
+          query={query}
+          nameError={nameError}
+          totalPages={totalPages}
+          currentPage={currentPage}
+          handleTextChange={handleTextChange}
+          handlePageChange={handlePageChange}
+        />
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(178px, 1fr))',
           gap: '16px',
           width: '100%',
-          maxHeight: '75vh',
+          maxHeight: {xs: '65vh', sm: "75vh", md: "56vh", lg: "65vh", xl: '75vh'},
           overflowY: 'auto',
           justifyItems: 'center',
           position: 'relative', // Added position relative for loading overlay

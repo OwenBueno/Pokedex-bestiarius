@@ -31,14 +31,13 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '0.2rem',
         border: '1px solid #ccc',
         transition: 'border 0.3s ease-out',
         '&:hover': {
           border: '2px solid #2196F3',
         },
         backgroundColor: editingPokemon === pokemon ? '' : '#F3F3F3',
-        minWidth: '150px'
+        minWidth: '150px',
       }}
     >
       <img src={pokemon.imageUrl || '/pokemon/missing.jpeg'} alt="" />
