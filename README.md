@@ -1,6 +1,6 @@
 # Bestiary
 
-A simple MERN project with the implementation of CRUD operations, MongoDB, Mongoose models, pagination, and PDF creation.
+The Bestiary Frontend is the user-facing component of our MERN (MongoDB, Express.js, React, Node.js) project, designed to deliver a seamless and intuitive experience. This frontend module incorporates robust features, including CRUD operations, MongoDB integration, Mongoose models, pagination for efficient data navigation, and dynamic PDF creation. It serves as the visual gateway for users to interact with and manage the diverse functionalities offered by the Bestiary application.
 
 ## Project Requirements
 
@@ -21,8 +21,6 @@ Follow these steps to install and configure the project:
 
 ## Project Structure
 
-Explain the project directory structure so that collaborators can easily find what they need.
-
 - `/`
   - `src/`: Contains the source code.
   - `src/pages`: Contains references to the pages.
@@ -31,8 +29,6 @@ Explain the project directory structure so that collaborators can easily find wh
   - `public/`: Contains public files.
 
 ## Usage
-
-Provide detailed instructions on how to use the project. Include examples of commands or code if necessary.
 
 To test in dev mode:
 
