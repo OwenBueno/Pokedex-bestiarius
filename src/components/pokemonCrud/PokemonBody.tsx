@@ -156,14 +156,6 @@ function PokemonBody() {
             gridTemplateColumns: "repeat(auto-fill, minmax(178px, 1fr))",
             gap: "15px",
             width: "100%",
-            overflowY: "auto",
-            height: {
-              xs: "65vh",
-              sm: "70vh",
-              md: "75vh",
-              lg: "53vh",
-              xl: "65vh",
-            },
           }}
         >
           {pokemons.map((pokemon) => (

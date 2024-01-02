@@ -86,8 +86,6 @@ function PokedexLimitBody() {
           gridTemplateColumns: "repeat(auto-fill, minmax(178px, 1fr))",
           gap: "16px",
           width: "100%",
-          maxHeight: {xs: "66vh", sm: "77vh", md: "56vh", lg: "65vh", xl: "75vh"},
-          overflowY: "auto",
           justifyItems: "center",
           position: "relative",
         }}
@@ -113,7 +111,7 @@ function PokedexLimitBody() {
         {pokemons?.length > 0 ? (
           pokemons.map((pokemon) => <PokemonCard key={pokemon.id} pokemon={pokemon} />)
         ) : (
-          <Typography sx={{ marginTop: "20px", position: "fixed" }}>{errorMessage}</Typography>
+          <Typography sx={{ marginTop: "20px"}}>{errorMessage}</Typography>
         )}
       </Box>
     </div>

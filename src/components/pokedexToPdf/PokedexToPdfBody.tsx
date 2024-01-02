@@ -108,8 +108,6 @@ function PokedexToPdf() {
           gridTemplateColumns: "repeat(auto-fill, minmax(178px, 1fr))",
           gap: "16px",
           width: "100%",
-          maxHeight: {xs: "65vh", sm: "75vh", md: "56vh", lg: "65vh", xl: "75vh"},
-          overflowY: "auto",
           justifyItems: "center",
           position: "relative", // Added position relative for loading overlay
         }}
@@ -135,7 +133,7 @@ function PokedexToPdf() {
         {pokemons?.length > 0 ? (
           pokemons.map((pokemon) => <PokemonCard key={pokemon.id} pokemon={pokemon} handleDownload={handleDownload} />)
         ) : (
-          <Typography sx={{ marginTop: "20px", position: "fixed" }}>{errorMessage}</Typography>
+          <Typography sx={{ marginTop: "20px"}}>{errorMessage}</Typography>
         )}
       </Box>
     </>
