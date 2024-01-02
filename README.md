@@ -4,10 +4,13 @@ The Bestiary Frontend is the user-facing component of our MERN (MongoDB, Express
 
 ## Project Requirements
 
-Make sure to have the following requirements installed on your system before running the project:
+Before running the project, ensure your system meets the following requirements:
 
 - Node.js 20.10+
 - MongoDB Community Server Download 7.0.4+ or MongoDB Atlas
+- **Backend Installation:**
+  - The Bestiary Frontend relies on the [Bestiary Backend](https://github.com/OwenBueno/backend-pokedex-bestiary) for seamless functionality.
+  - Follow the instructions in the [Backend Repository](https://github.com/OwenBueno/backend-pokedex-bestiary) to set up and configure the backend before initiating the frontend.
 - Internet access
 
 ## Installation
