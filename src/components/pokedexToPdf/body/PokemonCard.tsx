@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardActions, Typography } from '@mui/material';
 
 interface Pokemon {
   name: string;
@@ -11,10 +11,13 @@ interface Pokemon {
 
 interface PokemonCardProps {
   pokemon: Pokemon;
+  handleDownload: (name: string) => void; // Declare the type for the handleDownload prop
 }
 const capitalize = { textTransform: 'capitalize' }
 
-const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
+const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, handleDownload }) => {
+
+
   return (
     <Card
       sx={{
@@ -28,7 +31,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
           border: '2px solid #2196F3',
         },
         minWidth: '150px',
-        maxWidth: '190px',
+        maxWidth: '180px',
         maxHeight: '22rem',
       }}
     >
@@ -37,8 +40,12 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         <Typography>Id: {pokemon.id}</Typography>
         <Typography sx={capitalize}>Name: {pokemon.name}</Typography>
         <Typography sx={capitalize}>Type: {pokemon.type}</Typography>
-        <Typography sx={capitalize}>Abilities: {pokemon.abilities}</Typography>
       </CardContent>
+      <CardActions sx={{display: 'flex', justifyContent: 'center'}}>
+        <Button size="small" onClick={() => handleDownload(pokemon.name)}>
+          Download Pdf
+        </Button>
+      </CardActions>
     </Card>
   );
 };

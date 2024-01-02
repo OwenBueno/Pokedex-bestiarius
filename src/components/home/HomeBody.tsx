@@ -1,64 +1,53 @@
 import React from "react";
-import { Box } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import CardMedia from '@mui/material/CardMedia';
+import { Box, Card, CardActions, CardContent, Button, Typography, CardMedia } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-import ClickHerePokemon from "./button/ClickHerePokemon";
+const cardData = [
+  {
+    title: "Pokemon CRUD",
+    description: "Basic page for creating, reading, updating and deleting Pokémon.",
+    image: "/home/pokemon.png",
+    route: "/pokemon",
+  },
+  {
+    title: "Pokedex",
+    description: "Simple Pokedex with implementation of requests and search.",
+    image: "/home/pokedex.png",
+    route: "/pokedex",
+  },
+  {
+    title: "Pokedex with pdf Download",
+    description: "A simple pokedex interface with the option to download pokemons.",
+    image: "/home/pokedexToPdf.png",
+    route: "/pokemon/pdf",
+  },
+];
 
 function HomeBody() {
+  const navigate = useNavigate();
+
+  const handleClick = (route: string) => {
+    navigate(route);
+  };
+
   return (
-    <Box sx={{display: "flex",justifyContent: "space-evenly",alignItems: "center", width: "100vw", height:"75vh"}}>
-
-      <Card sx={{ maxWidth: 400}}>
-        <CardMedia sx={{ height: 200 }} image="/home/pokemon.png"></CardMedia>
-        <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-            Lizard
+    <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", width: "100vw", height: "75vh" }}>
+      {cardData.map((card, index) => (
+        <Card key={index} sx={{ maxWidth: 400 }}>
+          <CardMedia sx={{ height: 200 }} image={card.image}></CardMedia>
+          <CardContent>
+            <Typography sx={{ textAlign: 'center' }} gutterBottom variant="h5" component="div">
+              {card.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+              {card.description}
             </Typography>
-        </CardContent>
-        <CardActions sx={{display: "flex", justifyContent: "center"}}>
-          <ClickHerePokemon></ClickHerePokemon>
-        </CardActions>
-      </Card>
-
-      <Card sx={{ maxWidth: 250 }}>
-        <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-            Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            </Typography>
-        </CardContent>
-        <CardActions sx={{display: "flex", justifyContent: "center"}}>
-             <Button size="small">Click here</Button>
-        </CardActions>
-      </Card>
-
-      <Card sx={{ maxWidth: 250 }}>
-        <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-            Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            </Typography>
-        </CardContent>
-        <CardActions sx={{display: "flex", justifyContent: "center"}}>
-            <Button size="small">Click here</Button>
-        </CardActions>
-      </Card>
-
+          </CardContent>
+          <CardActions sx={{ display: "flex", justifyContent: "center" }}>
+            <Button size="small" onClick={() => handleClick(card.route)}>Click here</Button>
+          </CardActions>
+        </Card>
+      ))}
     </Box>
   );
 }

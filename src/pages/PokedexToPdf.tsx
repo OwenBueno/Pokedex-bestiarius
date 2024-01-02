@@ -1,10 +1,14 @@
-
+import Header from '../components/common/Header';
+import PokedexToPdfBody from '../components/pokedexToPdf/PokedexToPdfBody';
+import Footer from '../components/common/Footer';
 
 function PokedexToPdf() {
   return (
-    <div className="App">
-      PokedexToPdf
-    </div>
+    <>
+      <Header />
+      <PokedexToPdfBody/>
+      <Footer />
+    </>
   );
 }
 

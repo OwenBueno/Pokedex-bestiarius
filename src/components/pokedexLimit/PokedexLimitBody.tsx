@@ -2,8 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Box, Typography, CircularProgress } from '@mui/material';
 import axios from 'axios';
 
+import { PokedexAPI } from '../../globalVariables';
 import PokemonCard from './body/PokemonCard';
-import PokemonForm from './body/PokemonForm';
+import PokemonForm from '../common/PokemonForm';
 
 interface Pokemon {
   name: string;
@@ -13,7 +14,7 @@ interface Pokemon {
   id: number;
 }
 
-const API_URL = 'http://localhost:3001/api/pokedex';
+const API_URL = PokedexAPI;
 
 function PokedexLimitBody() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -60,7 +61,6 @@ function PokedexLimitBody() {
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
-
     if (text.length < 18) {
       setQuery(event.target.value);
       setNameError('');

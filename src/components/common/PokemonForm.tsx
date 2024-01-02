@@ -20,6 +20,8 @@ const PokemonForm: React.FC<PokemonFormProps> = ({
 }) => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '1rem' }}>
+      <div></div>
+      <div></div>
       <TextField
         sx={{ margin: '5px' }}
         label="Pokemon"
