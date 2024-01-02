@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import React from "react";
+import { Box, TextField, Button } from "@mui/material";
 
 interface Pokemon {
     _id: string;
@@ -30,10 +30,10 @@ const PokemonForm: React.FC<PokemonFormProps> = ({
   handleCancelEdit,
 }) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', marginLeft: '2rem' }}>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ display: "flex", flexDirection: "column", marginLeft: "2rem" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <TextField
-          sx={{ margin: '5px', maxWidth: '10rem' }}
+          sx={{ margin: "5px", maxWidth: "10rem" }}
           label="Name"
           variant="outlined"
           value={newPokemon.name}
@@ -42,7 +42,7 @@ const PokemonForm: React.FC<PokemonFormProps> = ({
           helperText={nameError}
         />
         <TextField
-          sx={{ margin: '5px', maxWidth: '10rem' }}
+          sx={{ margin: "5px", maxWidth: "10rem" }}
           label="Type"
           variant="outlined"
           value={newPokemon.type}
@@ -51,24 +51,24 @@ const PokemonForm: React.FC<PokemonFormProps> = ({
           helperText={typeError}
         />
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         {editingPokemon ? (
           <>
-            <Button sx={{ margin: '5px' }} onClick={handleUpdatePokemon} variant="contained" color="primary">
+            <Button sx={{ margin: "5px" }} onClick={handleUpdatePokemon} variant="contained" color="primary">
               Update
             </Button>
-            <Button sx={{ margin: '5px' }} onClick={handleCancelEdit} variant="contained" color="warning">
+            <Button sx={{ margin: "5px" }} onClick={handleCancelEdit} variant="contained" color="warning">
               Cancel
             </Button>
           </>
         ) : (
           <Button
-            sx={{ margin: '5px' }}
+            sx={{ margin: "5px" }}
             onClick={editingPokemon ? handleUpdatePokemon : handleAddPokemon}
             variant="contained"
             color="primary"
           >
-            {editingPokemon ? 'Update Pokemon' : 'Add Pokemon'}
+            {editingPokemon ? "Update Pokemon" : "Add Pokemon"}
           </Button>
         )}
       </Box>

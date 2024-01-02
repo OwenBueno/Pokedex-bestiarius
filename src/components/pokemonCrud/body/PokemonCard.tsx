@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent, CardActions, Button, ListItemText } from '@mui/material';
+import React from "react";
+import { Card, CardContent, CardActions, Button, ListItemText } from "@mui/material";
 
 interface Pokemon {
     _id: string;
@@ -28,22 +28,22 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
   return (
     <Card
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        border: '1px solid #ccc',
-        transition: 'border 0.3s ease-out',
-        '&:hover': {
-          border: '2px solid #2196F3',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        border: "1px solid #ccc",
+        transition: "border 0.3s ease-out",
+        "&:hover": {
+          border: "2px solid #2196F3",
         },
-        backgroundColor: editingPokemon === pokemon ? '' : '#F3F3F3',
-        minWidth: '150px',
+        backgroundColor: editingPokemon === pokemon ? "" : "#F3F3F3",
+        minWidth: "150px",
       }}
     >
-      <img src={pokemon.imageUrl || '/pokemon/missing.jpeg'} alt="" />
+      <img src={pokemon.imageUrl || "/pokemon/missing.jpeg"} alt="" />
       <CardContent>
-        <ListItemText sx={{ textTransform: 'capitalize' }} primary={`Name: ${pokemon.name}`} />
-        <ListItemText sx={{ textTransform: 'capitalize' }} primary={`Type: ${pokemon.type}`} />
+        <ListItemText sx={{ textTransform: "capitalize" }} primary={`Name: ${pokemon.name}`} />
+        <ListItemText sx={{ textTransform: "capitalize" }} primary={`Type: ${pokemon.type}`} />
       </CardContent>
       <CardActions>
         {editingPokemon === pokemon ? (

@@ -33,17 +33,17 @@ function HomeBody() {
   return (
     <Box sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", width: "100vw",
      height: {xs: "80vh", sm: "85vh", md: "80vh"}, 
-     flexDirection: {xs: 'column', lg: 'row'},
-     flexWrap: {md: 'wrap', lg: 'unset'}
+     flexDirection: {xs: "column", lg: "row"},
+     flexWrap: {md: "wrap", lg: "unset"}
      }}>
       {cardData.map((card, index) => (
         <Card key={index} sx={{ 
-          maxWidth: {sm: '350px', md: '300px', lg: '350px',xl: '400px'}, 
+          maxWidth: {sm: "350px", md: "300px", lg: "350px",xl: "400px"}, 
           maxHeight: {xs: "250px", sm: "275px",md: "400px"}
           }}>
           <CardMedia sx={{ height: {xs: 0, sm: 125, md: 200} }} image={card.image}></CardMedia>
           <CardContent>
-            <Typography sx={{ textAlign: 'center' }} gutterBottom variant="h5" component="div">
+            <Typography sx={{ textAlign: "center" }} gutterBottom variant="h5" component="div">
               {card.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">

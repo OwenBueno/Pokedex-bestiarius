@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, TextField, Pagination } from '@mui/material';
+import React from "react";
+import { Box, TextField, Pagination } from "@mui/material";
 
 interface PokemonFormProps {
   query: string;
@@ -19,11 +19,11 @@ const PokemonForm: React.FC<PokemonFormProps> = ({
   handlePageChange,
 }) => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '1rem' }}>
+    <Box sx={{ display: "flex", justifyContent: "space-between", margin: "1rem" }}>
       <div></div>
       <div></div>
       <TextField
-        sx={{ margin: '5px' }}
+        sx={{ margin: "5px" }}
         label="Pokemon"
         variant="outlined"
         value={query}

@@ -37,7 +37,7 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="transparent">
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h2"sx={{margin: "0 1rem 0 1rem"}}>Bestiary</Typography></a>
+          <a href="/" style={{ textDecoration: "none", color: "inherit" }}><Typography variant="h2"sx={{margin: "0 1rem 0 1rem"}}>Bestiary</Typography></a>
           <IconButton
             size="large"
             edge="start"
@@ -46,7 +46,7 @@ export default function Header() {
             sx={{ mr: 2 }}
             onClick={handleClick}
           >
-            <MenuIcon sx={{width: "2rem", height: '2rem'}}/>
+            <MenuIcon sx={{width: "2rem", height: "2rem"}}/>
           </IconButton>
           <Menu
             anchorEl={anchorEl}

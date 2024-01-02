@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Box, Typography, CircularProgress } from '@mui/material';
-import axios from 'axios';
+import React, { useState, useEffect, useCallback } from "react";
+import { Box, Typography, CircularProgress } from "@mui/material";
+import axios from "axios";
 
-import { PokedexAPI } from '../../globalVariables';
-import PokemonCard from './body/PokemonCard';
-import PokemonForm from '../common/PokemonForm';
+import { PokedexAPI } from "../../globalVariables";
+import PokemonCard from "./body/PokemonCard";
+import PokemonForm from "../common/PokemonForm";
 
 interface Pokemon {
   name: string;
@@ -18,11 +18,11 @@ const API_URL = PokedexAPI;
 
 function PokedexLimitBody() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [nameError, setNameError] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [nameError, setNameError] = useState("");
   const [loading, setLoading] = useState(false); // Added loading state
 
   const limit = 18;
@@ -31,18 +31,18 @@ function PokedexLimitBody() {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${API_URL}?page=${(currentPage - 1) * limit}&limit=${limit}${query ? `&search=${query}` : ''}`
+        `${API_URL}?page=${(currentPage - 1) * limit}&limit=${limit}${query ? `&search=${query}` : ""}`
       );
       setPokemons(response.data.results);
       if (response.status === 204) {
-        setErrorMessage('Non-pageable page.');
+        setErrorMessage("Non-pageable page.");
       } else {
         setTotalPages((prevTotalPages) => Math.ceil(response.data.count / limit));
         setErrorMessage(""); // Clear the error message when data is successfully fetched
       }
     } catch (error) {
-      setErrorMessage('No pokemons found.');
-      console.error('Error fetching Pokémon data:', error);
+      setErrorMessage("No pokemons found.");
+      console.error("Error fetching Pokémon data:", error);
     } finally {
       setLoading(false);
     }
@@ -63,10 +63,10 @@ function PokedexLimitBody() {
     const text = event.target.value;
     if (text.length < 18) {
       setQuery(event.target.value);
-      setNameError('');
+      setNameError("");
       setCurrentPage(1);
     } else {
-      setNameError('Pokemon name must contain fewer than 18 letters');
+      setNameError("Pokemon name must contain fewer than 18 letters");
     }
   };
 
@@ -82,28 +82,28 @@ function PokedexLimitBody() {
       />
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(178px, 1fr))',
-          gap: '16px',
-          width: '100%',
-          maxHeight: {xs: '66vh', sm: "77vh", md: "56vh", lg: "65vh", xl: '75vh'},
-          overflowY: 'auto',
-          justifyItems: 'center',
-          position: 'relative',
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(178px, 1fr))",
+          gap: "16px",
+          width: "100%",
+          maxHeight: {xs: "66vh", sm: "77vh", md: "56vh", lg: "65vh", xl: "75vh"},
+          overflowY: "auto",
+          justifyItems: "center",
+          position: "relative",
         }}
       >
         {loading && (
           <div
             style={{
-              position: 'absolute',
+              position: "absolute",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255, 255, 255, 0.7)',
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "rgba(255, 255, 255, 0.7)",
               zIndex: 1,
             }}
           >
@@ -113,7 +113,7 @@ function PokedexLimitBody() {
         {pokemons?.length > 0 ? (
           pokemons.map((pokemon) => <PokemonCard key={pokemon.id} pokemon={pokemon} />)
         ) : (
-          <Typography sx={{ marginTop: '20px', position: 'fixed' }}>{errorMessage}</Typography>
+          <Typography sx={{ marginTop: "20px", position: "fixed" }}>{errorMessage}</Typography>
         )}
       </Box>
     </div>
